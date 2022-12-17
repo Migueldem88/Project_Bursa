@@ -1,8 +1,5 @@
 from django.db import models
 
-from .managers import NumpyManager, SearchManager
-
-
 class ProductTable(models.Model):
     column2 = models.IntegerField('Unnamed: 0.1',blank=True,null=True)
     column3 = models.IntegerField('Unnamed: 0', blank=True,null=True)
@@ -20,8 +17,6 @@ class ProductTable(models.Model):
         verbose_name_plural = 'Product Lists'
         ordering = ['-name']
 
-    #object=NumpyManager()
-    objects = SearchManager()
 
     def __str__(self):
         return str(self.id) + '-'+self.en_pname + '-' + str(self.price)
